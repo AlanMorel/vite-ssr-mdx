@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "./Link";
 import logo from "./logo.svg";
 import "./PageShell.css";
-import type { PageContext } from './types';
+import type { PageContext } from "./types";
 import { PageContextProvider } from "./usePageContext";
 export { PageShell };
 
@@ -13,15 +13,9 @@ function PageShell({ pageContext, children }: { pageContext: PageContext; childr
                 <Layout>
                     <Sidebar>
                         <Logo />
-                        <Link href="/">
-                            Home
-                        </Link>
-                        <Link href="/about">
-                            About
-                        </Link>
-                        <Link href="/markdown">
-                            Markdown
-                        </Link>
+                        <Link href="/">Home</Link>
+                        <Link href="/about">About</Link>
+                        <Link href="/markdown">Markdown</Link>
                     </Sidebar>
                     <Content>{children}</Content>
                 </Layout>

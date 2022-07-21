@@ -1,4 +1,3 @@
-
 export { Page };
 
 function Page({ is404, errorInfo }: { is404: boolean; errorInfo?: string }) {

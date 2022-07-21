@@ -4,9 +4,11 @@ body {
   margin: 0;
   font-family: sans-serif;
 }
+
 * {
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
 }
@@ -14,6 +16,7 @@ a {
 .navitem {
   padding: 3px 10px;
 }
+
 .navitem.is-active {
   background-color: #eee;
 }
