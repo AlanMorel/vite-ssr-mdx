@@ -1,4 +1,4 @@
-import "./index.css";
+import "@/pages/about/index.css";
 
 export { Page };
 

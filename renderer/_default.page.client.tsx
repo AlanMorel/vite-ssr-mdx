@@ -1,8 +1,8 @@
+import MDXComponentsProvider from "@/renderer/context/MDXComponents";
+import { PageShell } from "@/renderer/PageShell";
+import type { PageContext } from "@/renderer/types";
 import ReactDOM from "react-dom/client";
 import type { PageContextBuiltInClient } from "vite-plugin-ssr/client/router";
-import MDXComponentsProvider from "./context/MDXComponents";
-import { PageShell } from "./PageShell";
-import type { PageContext } from "./types";
 
 export const clientRouting = true;
 export { render };

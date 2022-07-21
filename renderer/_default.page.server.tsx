@@ -1,10 +1,10 @@
+import MDXComponentsProvider from "@/renderer/context/MDXComponents";
+import logoUrl from "@/renderer/logo.svg";
+import { PageShell } from "@/renderer/PageShell";
+import type { PageContext } from "@/renderer/types";
 import ReactDOMServer from "react-dom/server";
 import type { PageContextBuiltIn } from "vite-plugin-ssr";
 import { dangerouslySkipEscape, escapeInject } from "vite-plugin-ssr";
-import MDXComponentsProvider from "./context/MDXComponents";
-import logoUrl from "./logo.svg";
-import { PageShell } from "./PageShell";
-import type { PageContext } from "./types";
 
 export { render };
 // See https://vite-plugin-ssr.com/data-fetching

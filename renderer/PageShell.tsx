@@ -1,9 +1,9 @@
+import logo from "@/renderer/logo.svg";
+import "@/renderer/PageShell.css";
+import type { PageContext } from "@/renderer/types";
+import { PageContextProvider } from "@/renderer/usePageContext";
 import React from "react";
 import { Link } from "./Link";
-import logo from "./logo.svg";
-import "./PageShell.css";
-import type { PageContext } from "./types";
-import { PageContextProvider } from "./usePageContext";
 export { PageShell };
 
 function PageShell({ pageContext, children }: { pageContext: PageContext; children: React.ReactNode }) {

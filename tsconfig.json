@@ -7,6 +7,12 @@
         "jsx": "react-jsx",
         "esModuleInterop": true,
         "types": ["vite/client"],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": [
+                "./*"
+            ]
+        }
     },
     "ts-node": {
         "esm": true

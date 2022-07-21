@@ -1,11 +1,10 @@
 {
     "type": "module",
     "scripts": {
-        "dev": "npm run server",
-        "prod": "npm run build && npm run server:prod",
-        "build": "vite build",
-        "server": "node --loader ts-node/esm ./server/index.ts",
-        "server:prod": "cross-env NODE_ENV=production node --loader ts-node/esm ./server/index.ts"
+        "dev": "node --loader ts-node/esm ./server/index.ts",
+        "build:client": "npm run build:clean && vite build",
+        "build:clean": "rimraf dist/",
+        "server:run": "cross-env NODE_ENV=production node --loader ts-node/esm ./server/index.ts"
     },
     "dependencies": {
         "@mdx-js/react": "^2.1.2",
@@ -19,6 +18,7 @@
         "express": "^4.18.1",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "rimraf": "^3.0.2",
         "typescript": "^4.7.4",
         "vite": "^3.0.2",
         "vite-plugin-ssr": "^0.4.10"

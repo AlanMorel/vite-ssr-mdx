@@ -1,5 +1,5 @@
+import type { PageContext } from "@/renderer/types";
 import React, { useContext } from "react";
-import type { PageContext } from "./types";
 
 export { PageContextProvider };
 export { usePageContext };
