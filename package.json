@@ -3,10 +3,9 @@
     "scripts": {
         "dev": "npm run server",
         "prod": "npm run build && npm run server:prod",
-        "build": "vite build && vite build",
+        "build": "vite build",
         "server": "node --loader ts-node/esm ./server/index.ts",
-        "server:prod": "cross-env NODE_ENV=production node --loader ts-node/esm ./server/index.ts",
-        "prerender": "npm run build && vite-plugin-ssr prerender"
+        "server:prod": "cross-env NODE_ENV=production node --loader ts-node/esm ./server/index.ts"
     },
     "dependencies": {
         "@mdx-js/react": "^2.1.2",

@@ -4,7 +4,7 @@ import { defineConfig } from "vite";
 import ssr from "vite-plugin-ssr/plugin";
 
 export default defineConfig({
-    plugins: [react(), mdx(), ssr()],
+    plugins: [react(), mdx(), ssr({ prerender: true })],
     build: {
         rollupOptions: {
             output: {
