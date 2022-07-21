@@ -1,6 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 
-export default function MDXComponentsProvider({ children }) {
+export default function MDXComponentsProvider({ children }: { children: React.ReactNode }) {
     return (
         <MDXProvider
             components={{
