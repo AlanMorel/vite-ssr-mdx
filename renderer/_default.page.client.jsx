@@ -1,22 +1,44 @@
-import ReactDOM from "react-dom";
 import React from "react";
-import { getPage } from "vite-plugin-ssr/client";
-import { PageShell } from "./PageShell";
+import ReactDOM from "react-dom/client";
 import MDXComponentsProvider from "./context/MDXComponents";
+import { PageShell } from "./PageShell";
 
-hydrate();
+export const clientRouting = true;
+export { render };
+export { onHydrationEnd };
+export { onPageTransitionStart };
+export { onPageTransitionEnd };
 
-async function hydrate() {
-  // We do Server Routing, but we can also do Client Routing by using `useClientRouter()`
-  // instead of `getPage()`, see https://vite-plugin-ssr.com/useClientRouter
-  const pageContext = await getPage();
-  const { Page, pageProps } = pageContext;
-  ReactDOM.hydrate(
-    <PageShell pageContext={pageContext}>
-      <MDXComponentsProvider>
-        <Page {...pageProps} />
-      </MDXComponentsProvider>
-    </PageShell>,
-    document.getElementById("page-view")
-  );
+let root;
+
+async function render(pageContext) {
+    const { Page, pageProps } = pageContext;
+    const page = (
+        <PageShell pageContext={pageContext}>
+            <MDXComponentsProvider>
+                <Page {...pageProps} />
+            </MDXComponentsProvider>
+        </PageShell>
+    );
+
+    const container = document.getElementById("page-view");
+    if (pageContext.isHydration) {
+        root = ReactDOM.hydrateRoot(container, page);
+    } else {
+        if (!root) {
+            root = ReactDOM.createRoot(container);
+        }
+        root.render(page);
+    }
+    document.title = "hello";
+}
+
+function onHydrationEnd() {
+    console.log("Hydration finished; page is now interactive.");
+}
+function onPageTransitionStart() {
+    console.log("Page transition start");
+}
+function onPageTransitionEnd() {
+    console.log("Page transition end");
 }
