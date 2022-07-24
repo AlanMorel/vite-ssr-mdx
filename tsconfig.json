@@ -1,5 +1,5 @@
 {
-    "compilerOptions": {
+        "compilerOptions": {
         "strict": true,
         "module": "ESNext",
         "moduleResolution": "Node",
@@ -7,15 +7,17 @@
         "jsx": "react-jsx",
         "esModuleInterop": true,
         "types": ["vite/client"],
+        "rootDir": "./",
+        "outDir": "./dist",
         "baseUrl": "./",
         "paths": {
             "@/*": [
                 "./*"
             ]
-        }
+        },
     },
     "ts-node": {
         "esm": true
     },
     "lib": ["esnext"]
-  }
+}

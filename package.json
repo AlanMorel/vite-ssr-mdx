@@ -1,12 +1,12 @@
 {
     "type": "module",
     "scripts": {
-        "dev": "node --loader ts-node/esm ./server/index.ts",
-        "build:client": "npm run build:clean && vite build",
-        "build:clean": "rimraf dist/",
+        "dev": "nodemon --config ./nodemon.config.json",
+        "build:client": "rimraf dist/ && vite build",
         "server:run": "cross-env NODE_ENV=production node --loader ts-node/esm ./server/index.ts"
     },
     "dependencies": {
+        "@bleed-believer/path-alias": "^0.10.14",
         "@mdx-js/react": "^2.1.2",
         "@mdx-js/rollup": "^2.1.2",
         "@types/compression": "^1.7.2",
@@ -24,6 +24,7 @@
         "vite-plugin-ssr": "^0.4.10"
     },
     "devDependencies": {
+        "nodemon": "^2.0.19",
         "ts-node": "^10.9.1"
     }
 }
